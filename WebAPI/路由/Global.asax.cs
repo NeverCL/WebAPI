@@ -15,6 +15,11 @@ namespace 路由
 
         protected void Application_Start(object sender, EventArgs e)
         {
+            AddPageRoute(RouteTable.Routes);
+        }
+
+        private void AddPageRoute(RouteCollection routes)
+        {
             var defaults = new RouteValueDictionary//路由变量默认值
             {
                  {"code","010"},
@@ -31,7 +36,7 @@ namespace 路由
                 {"defaultCode","北京" },
                 {"defaultPhone","北京X电话" }
             };
-            RouteTable.Routes.MapPageRoute("default", "{code}/{phone}", "~/call.aspx", false, defaults, constraints, dataTokens);
+            routes.MapPageRoute("default", "{code}/{phone}", "~/call.aspx", false, defaults, constraints, dataTokens);
         }
 
         protected void Session_Start(object sender, EventArgs e)
