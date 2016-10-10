@@ -4,9 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Configuration;
 using System.Web.Http;
+using System.Web.Http.Routing;
 using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
+using HttpMethodConstraint = System.Web.Routing.HttpMethodConstraint;
 
 namespace 路由
 {
@@ -36,6 +38,7 @@ namespace 路由
                 {"defaultCode","北京" },
                 {"defaultPhone","北京X电话" }
             };
+            routes.Ignore("010/1000001");
             routes.MapPageRoute("default", "{code}/{phone}", "~/call.aspx", false, defaults, constraints, dataTokens);
         }
 
