@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Configuration;
 using System.Web.Http;
-using System.Web.Http.Routing;
 using System.Web.Routing;
-using System.Web.Security;
-using System.Web.SessionState;
-using HttpMethodConstraint = System.Web.Routing.HttpMethodConstraint;
 
 namespace 路由
 {
@@ -17,7 +9,24 @@ namespace 路由
 
         protected void Application_Start(object sender, EventArgs e)
         {
+            AddHttpRoute(GlobalConfiguration.Configuration.Routes);
             AddPageRoute(RouteTable.Routes);
+        }
+
+        private void AddHttpRoute(HttpRouteCollection routes)
+        {
+            var defaults = new RouteValueDictionary//路由变量默认值
+            {
+                 {"code","010"},
+                 {"phone","1000000"},
+            };
+            var constraints = new RouteValueDictionary//路由变量约束
+            {
+                {"code",@"0\d{2,3}" },
+                {"phone",@"\d{7,9}" },
+                {"httpMethod",new HttpMethodConstraint("POST") }
+            };
+            routes.MapHttpRoute("default", "{code}/{phone}", defaults, constraints);
         }
 
         private void AddPageRoute(RouteCollection routes)
