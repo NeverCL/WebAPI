@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "消息管道", "消息管�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "激活HttpController", "激活HttpController\激活HttpController.csproj", "{6A33F1B0-3983-494F-8DD7-86F643965DD8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Action的选择", "Action的选择\Action的选择.csproj", "{A4476B07-D8E2-43C9-ABD0-FB9D84635F16}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{6A33F1B0-3983-494F-8DD7-86F643965DD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A33F1B0-3983-494F-8DD7-86F643965DD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A33F1B0-3983-494F-8DD7-86F643965DD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4476B07-D8E2-43C9-ABD0-FB9D84635F16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4476B07-D8E2-43C9-ABD0-FB9D84635F16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4476B07-D8E2-43C9-ABD0-FB9D84635F16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4476B07-D8E2-43C9-ABD0-FB9D84635F16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
