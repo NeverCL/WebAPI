@@ -32,14 +32,14 @@ namespace 特性路由
                 server.Configuration.Routes.MapHttpRoute("default", "{controller}");
                 server.Configuration.EnsureInitialized();
                 ShowAttrRoute(server.Configuration.Routes);
-                ShowSubRoutesToken(server.Configuration.Routes);
+                ShowSubRoutesTokens(server.Configuration.Routes);
                 ShowRoutes(server.Configuration.Routes);
                 server.OpenAsync();
                 Console.Read();
             }
         }
 
-        private static void ShowSubRoutesToken(HttpRouteCollection routes)
+        private static void ShowSubRoutesTokens(HttpRouteCollection routes)
         {
             foreach (var subRoute in routes.GetSubRoutes())
             {
