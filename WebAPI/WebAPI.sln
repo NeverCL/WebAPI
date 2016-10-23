@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Action的选择", "Action�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "特性路由", "特性路由\特性路由.csproj", "{285D8BDF-BAA7-44FC-9003-8F6AE3DB58E0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model绑定", "Model绑定\Model绑定.csproj", "{E5A8BECA-6C71-43BC-B79B-5E83126B7817}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{285D8BDF-BAA7-44FC-9003-8F6AE3DB58E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{285D8BDF-BAA7-44FC-9003-8F6AE3DB58E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{285D8BDF-BAA7-44FC-9003-8F6AE3DB58E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5A8BECA-6C71-43BC-B79B-5E83126B7817}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5A8BECA-6C71-43BC-B79B-5E83126B7817}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5A8BECA-6C71-43BC-B79B-5E83126B7817}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5A8BECA-6C71-43BC-B79B-5E83126B7817}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
