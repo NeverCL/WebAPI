@@ -8,6 +8,7 @@ using System.Web.Http.Metadata;
 using System.Web.Http.Metadata.Providers;
 using System.Web.Http.SelfHost;
 using System.Web.Http.ValueProviders;
+using System.Web.Http.ValueProviders.Providers;
 
 namespace Model绑定
 {
@@ -30,6 +31,10 @@ namespace Model绑定
             var result2 = new ValueProviderResult(123, "", null);
             var rst = result.ConvertTo(typeof(int[]));
             var rst2 = result2.ConvertTo(typeof(int[]));
+
+
+            var valueProvider = new NameValuePairsValueProvider(new[] { new KeyValuePair<string, string>("A", "1"), new KeyValuePair<string, string>("A.B", "1"), new KeyValuePair<string, string>("C", "1") }, null);
+
             Console.ReadKey();
         }
 
