@@ -8,15 +8,24 @@ using System.Web.Http.ModelBinding;
 
 namespace Model绑定
 {
+    [RoutePrefix("demo")]
     public class DemoController : ApiController
     {
-        [Route("demo/{x}/{y}/{z}")]
-        public Model Get(Model model, string z)
+        [Route("get/{x?}/{y?}/{z?}")]
+        public IEnumerable<int> Get(int x, int y, int z)
+        {
+            yield return x;
+            yield return y;
+            yield return z;
+        }
+
+        [Route("get2/{x}/{y}/{z}")]
+        public Model Get(Model model)
         {
             return model;
         }
 
-        [Route("demo/{point}")]
+        [Route("get/{point}")]
         public Point Get(Point point)
         {
             return point;

@@ -17,6 +17,9 @@ namespace Model绑定
         {
             OpenServer();
             ModelMetadata metadata = new ModelMetadata(null, null, null, null, null);
+
+            CachedDataAnnotationsModelMetadata cached = new CachedDataAnnotationsModelMetadata(null, null);
+
             //var cfg = new HttpConfiguration();
             //var provider = cfg.Services.GetModelMetadataProvider();
             //foreach (var property in provider.GetMetadataForType(() => new Model { X = "1" }, typeof(Model)).Properties)
@@ -32,7 +35,6 @@ namespace Model绑定
         {
             using (var server = new HttpSelfHostServer(new HttpSelfHostConfiguration("http://localhost:10000")))
             {
-                server.Configuration.Routes.MapHttpRoute("default", "{controller}");
                 server.Configuration.MapHttpAttributeRoutes();
                 server.OpenAsync();
                 Console.Read();
