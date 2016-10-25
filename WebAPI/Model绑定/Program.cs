@@ -15,22 +15,39 @@ namespace Model绑定
     {
         static void Main(string[] args)
         {
-            OpenServer();
-            ModelMetadata metadata = new ModelMetadata(null, null, null, null, null);
+            //OpenServer();
+            //GetModelMetadata();
 
-            CachedDataAnnotationsModelMetadata cached = new CachedDataAnnotationsModelMetadata(null, null);
+            //var metadata = new ModelMetadata(null, null, null, null, null);
 
-            //var cfg = new HttpConfiguration();
-            //var provider = cfg.Services.GetModelMetadataProvider();
-            //foreach (var property in provider.GetMetadataForType(() => new Model { X = "1" }, typeof(Model)).Properties)
-            //{
-            //    Console.WriteLine($"{property.PropertyName}-{property.Model}-{property.ModelType}-{property.IsReadOnly}");
-            //}
+            //var cached = new CachedDataAnnotationsModelMetadata(null, null);
 
-            //Console.ReadKey();
+            //var metadataProvider = new DataAnnotationsModelMetadataProvider();
 
+            //var dataAnnotationsModelMetadataProvider = new DataAnnotationsModelMetadataProvider();
+
+            var result = new ValueProviderResult(new[] { "1", "2", "3" }, "", null);
+            var result2 = new ValueProviderResult(123, "", null);
+            var rst = result.ConvertTo(typeof(int[]));
+            var rst2 = result2.ConvertTo(typeof(int[]));
+            Console.ReadKey();
         }
 
+        /// <summary>
+        /// 2.0 获取元数据
+        /// </summary>
+        private static void GetModelMetadata()
+        {
+            var provider = new HttpConfiguration().Services.GetModelMetadataProvider();
+            foreach (CachedDataAnnotationsModelMetadata property in provider.GetMetadataForType(() => new Model { X = "1" }, typeof(Model)).Properties)
+            {
+                Console.WriteLine($"{property.GetDisplayName()}-{property.Model}-{property.ModelType}-{property.IsReadOnly}");
+            }
+        }
+
+        /// <summary>
+        /// 1.0 启动WebAPI
+        /// </summary>
         private static void OpenServer()
         {
             using (var server = new HttpSelfHostServer(new HttpSelfHostConfiguration("http://localhost:10000")))
