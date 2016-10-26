@@ -19,24 +19,59 @@ namespace Model绑定
             //OpenServer();
             //GetModelMetadata();
 
-            //var metadata = new ModelMetadata(null, null, null, null, null);
+            #region ModelMetadata
+            ModelMetadata metadata;
 
-            //var cached = new CachedDataAnnotationsModelMetadata(null, null);
+            CachedDataAnnotationsModelMetadata cachedDataAnnotationsModelMetadata;
 
-            //var metadataProvider = new DataAnnotationsModelMetadataProvider();
+            DataAnnotationsModelMetadataProvider dataAnnotationsModelMetadataProvider;
+            #endregion
 
-            //var dataAnnotationsModelMetadataProvider = new DataAnnotationsModelMetadataProvider();
+            #region ValueProviderFactory
+            ValueProviderFactory valueProviderFactory;
 
-            var result = new ValueProviderResult(new[] { "1", "2", "3" }, "", null);
-            var result2 = new ValueProviderResult(123, "", null);
-            var rst = result.ConvertTo(typeof(int[]));
-            var rst2 = result2.ConvertTo(typeof(int[]));
+            RouteDataValueProviderFactory routeDataValueProviderFactory;
 
+            QueryStringValueProviderFactory queryStringValueProviderFactory;
 
-            var valueProvider = new NameValuePairsValueProvider(new[] { new KeyValuePair<string, string>("A", "1"), new KeyValuePair<string, string>("A.B", "1"), new KeyValuePair<string, string>("C", "1") }, null);
+            CompositeValueProviderFactory compositeValueProviderFactory;
+
+            new HttpConfiguration().Services.GetValueProviderFactories();
+            #endregion
+
 
             Console.ReadKey();
         }
+
+        /// <summary>
+        /// 3.0 ValueProvider
+        /// </summary>
+        private static void CallValueProvider()
+        {
+            var result = new ValueProviderResult(new[] { "1", "2", "3" }, "", null);
+            var result2 = new ValueProviderResult(123, "", null);
+            var result3 = new ValueProviderResult(new List<string> { "1", "2", "3" }, "1,2,3", null);
+            var rst = result.ConvertTo(typeof(int[]));
+            var rst2 = result2.ConvertTo(typeof(int[]));
+            var rst3 = result3.ConvertTo(typeof(int[]));
+
+            var list = new List<KeyValuePair<string, string>>
+            {
+                new KeyValuePair<string, string>("foot", "1"),
+                new KeyValuePair<string, string>("foot", "2"),
+                new KeyValuePair<string, string>("foot", "3")
+            };
+
+            var provider = new NameValuePairsValueProvider(list, null);
+            rst3 = provider.GetValue("foot").ConvertTo(typeof(int[]));
+
+            RouteDataValueProvider routeDataValueProvider;
+
+            QueryStringValueProvider queryStringValueProvider;
+
+            CompositeValueProvider compositeValueProvider;
+        }
+
 
         /// <summary>
         /// 2.0 获取元数据
