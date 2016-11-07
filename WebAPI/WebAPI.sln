@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model绑定", "Model绑定\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model绑定下", "Model绑定下\Model绑定下.csproj", "{D10D8EB1-FCA3-4A67-89FC-95A04B5A7156}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "参数绑定", "参数绑定\参数绑定.csproj", "{6F06E2B9-0225-41E5-B01A-CA08ADAF869B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{D10D8EB1-FCA3-4A67-89FC-95A04B5A7156}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D10D8EB1-FCA3-4A67-89FC-95A04B5A7156}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D10D8EB1-FCA3-4A67-89FC-95A04B5A7156}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F06E2B9-0225-41E5-B01A-CA08ADAF869B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F06E2B9-0225-41E5-B01A-CA08ADAF869B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F06E2B9-0225-41E5-B01A-CA08ADAF869B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F06E2B9-0225-41E5-B01A-CA08ADAF869B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
